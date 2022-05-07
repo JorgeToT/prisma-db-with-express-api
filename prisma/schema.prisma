@@ -22,6 +22,6 @@ model Student {
   name             String
   lang             String
   missionCommander String
-  enrollments      String
+  enrollments      Int
   hasCertification Boolean @default(false)
 }
