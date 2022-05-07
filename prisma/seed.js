@@ -53,7 +53,40 @@ async function main() {
       },
     });
 
-    console.log('Create 4 explorers');
+    const woopa_ = await prisma.student.upsert({
+      where: {name : 'Woopa'},
+      update: {},
+      create: {
+        name: 'Woopa',
+        lang: 'Node',
+        missionCommander: 'Carlo',
+        enrollments: 5
+      },
+    });
+
+    const woopa_1 = await prisma.student.upsert({
+      where: {name : 'Woopa 1'},
+      update: {},
+      create: {
+        name: 'Woopa 1',
+        lang: 'Java',
+        missionCommander: 'Fer',
+        enrollments: 3
+      },
+    });
+
+    const woopa_2 = await prisma.student.upsert({
+      where: {name : 'Woopa 2'},
+      update: {},
+      create: {
+        name: 'Woopa 2',
+        lang: 'Node',
+        missionCommander: 'Carlo',
+        enrollments: 1
+      },
+    });
+
+    console.log('Create 7  explorers');
   } catch(e) {
     console.error(e);
     process.exit(1);
